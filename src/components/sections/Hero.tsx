@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { personalInfo } from '../../data/personalInfo';
-import profile from '../../../img/id.jpg';
+import profile from '../../img/id.jpg';
 
 interface HeroProps {
   scrollToSection: (section: string) => void;
