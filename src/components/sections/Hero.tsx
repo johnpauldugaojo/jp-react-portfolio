@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { personalInfo } from '../../data/personalInfo';
+import profile from '../../../img/id.jpg';
 
 interface HeroProps {
   scrollToSection: (section: string) => void;
@@ -47,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           <div className='order-1 lg:order-2 flex justify-center animate-fadeIn'>
             <div className='relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white dark:border-slate-700 shadow-xl'>
               <img
-                src='\img\id.jpg'
+                src={profile}
                 alt='Professional Portrait'
                 className='w-full h-full object-cover'
               />
