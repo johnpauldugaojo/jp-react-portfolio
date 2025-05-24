@@ -1,6 +1,6 @@
-import React from "react";
-import { ArrowDown } from "lucide-react";
-import { personalInfo } from "../../data/personalInfo";
+import React from 'react';
+import { ArrowDown } from 'lucide-react';
+import { personalInfo } from '../../data/personalInfo';
 
 interface HeroProps {
   scrollToSection: (section: string) => void;
@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
           <div className='order-2 lg:order-1 animate-fadeIn'>
             <h1 className='text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-4'>
-              Hi, I'm{" "}
+              Hi, I'm{' '}
               <span className='text-emerald-600 dark:text-emerald-400'>
                 {personalInfo.name}
               </span>
@@ -31,13 +31,13 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             </p>
             <div className='flex flex-wrap gap-4'>
               <button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => scrollToSection('contact')}
                 className='px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg'
               >
                 Get in Touch
               </button>
               <button
-                onClick={() => scrollToSection("projects")}
+                onClick={() => scrollToSection('projects')}
                 className='px-6 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-lg border border-slate-300 dark:border-slate-600 hover:border-emerald-500 dark:hover:border-emerald-500 transition-colors shadow-sm hover:shadow-md'
               >
                 View Projects
@@ -57,7 +57,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
       </div>
 
       <button
-        onClick={() => scrollToSection("about")}
+        onClick={() => scrollToSection('about')}
         className='absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors animate-bounce'
         aria-label='Scroll down'
       >
