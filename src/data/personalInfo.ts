@@ -16,12 +16,12 @@ export interface Skill {
 
 export const personalInfo: PersonalInfo = {
   name: 'John Paul Dugaojo',
-  title: 'QC Engineer',
+  title: 'QC Engineer | Software Engineer',
   email: 'johnpauldugaojo@gmail.com',
   linkedin: 'https://linkedin.com/in/johnpauldugaojo/',
   github: 'https://github.com/johnpauldugaojo',
   summary:
-    'Quality Control Engineer with over 3 years of experience in software testing and quality assurance. Specialized in test automation using Playwright and Cypress, with additional skills in web development. Passionate about delivering high-quality software products and improving development processes.',
+    'Quality Control Engineer with over 3 years of experience in software testing and quality assurance, and 2 years of experience as a Software Engineer. Specialized in test automation using Playwright and Cypress, with additional skills in web development using React, Tailwind CSS and Appian. Passionate about delivering high-quality software products, writing clean and maintainable code, and continuously improving development and testing processes.',
   skills: [
     { name: 'Manual Testing', level: 5, category: 'testing' },
     { name: 'Test Case Design', level: 5, category: 'testing' },

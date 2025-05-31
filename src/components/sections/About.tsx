@@ -1,6 +1,6 @@
-import React from "react";
-import { Check } from "lucide-react";
-import { personalInfo } from "../../data/personalInfo";
+import React from 'react';
+import { Check } from 'lucide-react';
+import { personalInfo } from '../../data/personalInfo';
 
 const About: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const About: React.FC = () => {
       <div className='container mx-auto px-6'>
         <div className='mb-12 text-center'>
           <h2 className='text-3xl font-bold text-slate-800 dark:text-white mb-4'>
-            About{" "}
+            About{' '}
             <span className='text-emerald-600 dark:text-emerald-400'>Me</span>
           </h2>
           <div className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
@@ -17,7 +17,8 @@ const About: React.FC = () => {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
           <div className='lg:order-1 order-2'>
             <h3 className='text-2xl font-semibold text-slate-800 dark:text-white mb-6'>
-              Quality Control Engineer with a passion for excellence
+              Quality Control and Software Engineer with a passion for
+              excellence
             </h3>
             <p className='text-slate-600 dark:text-slate-300 mb-6 leading-relaxed'>
               {personalInfo.summary}

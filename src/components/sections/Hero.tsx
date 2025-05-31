@@ -1,6 +1,6 @@
 import React from 'react';
 import DownloadCVButton from '../ui/DownloadCVButton';
-import { ArrowDown } from 'lucide-react';
+// import { ArrowDown } from 'lucide-react';
 import { personalInfo } from '../../data/personalInfo';
 import profile from '../../img/id.jpg';
 
@@ -27,9 +27,10 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               {personalInfo.title}
             </h2>
             <p className='text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed max-w-2xl'>
-              Ensuring software quality through meticulous testing, automation,
-              and continuous improvement. Let's build reliable software
-              together.
+              Committed to ensuring software quality through precise testing,
+              emerging automation skills, and a mindset of continuous
+              improvement. Let's work together to build reliable,
+              high-performing software.
             </p>
             <div className='flex flex-wrap gap-4'>
               <DownloadCVButton />
@@ -53,14 +54,14 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
         </div>
       </div>
 
-      <button
+      {/* <button
         onClick={() => scrollToSection('about')}
         className='absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors animate-bounce'
         aria-label='Scroll down'
       >
         <span className='text-sm font-medium mb-2'>Scroll Down</span>
         <ArrowDown size={20} />
-      </button>
+      </button> */}
 
       {/* Decorative Elements */}
       <div className='absolute top-20 right-20 w-64 h-64 bg-emerald-300 dark:bg-emerald-700 rounded-full opacity-10 blur-3xl'></div>

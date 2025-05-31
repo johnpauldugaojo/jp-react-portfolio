@@ -6,7 +6,7 @@ const DownloadCVButton: React.FC = () => {
     <a
       href='/jpcv.pdf' // Adjust the path to your CV file
       download
-      className='flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg'
+      className='flex items-center gap-2 px-3 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-lg border border-slate-300 dark:border-slate-600 hover:border-emerald-500 dark:hover:border-emerald-500 transition-colors shadow-sm hover:shadow-md'
     >
       <FaDownload className='text-lg' />
       <span>Download CV</span>

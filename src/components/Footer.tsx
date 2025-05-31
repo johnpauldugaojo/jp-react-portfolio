@@ -11,12 +11,18 @@ const Footer: React.FC = () => {
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           <div>
             <h3 className='text-xl font-bold mb-4'>
-              <span className='text-emerald-400'>QC</span> <span>Engineer</span>
+              <span className='text-emerald-400'>QC & Sofware</span>{' '}
+              <span>Engineer</span>
             </h3>
+
             <p className='text-slate-300 mb-4'>
-              Quality-focused software testing professional dedicated to
-              delivering exceptional products through meticulous testing and
-              automation.
+              Quality-driven testing and development professional with a solid
+              foundation in software engineering. Dedicated to delivering
+              high-performing, reliable applications through meticulous manual
+              testing, emerging automation skills, and clean, maintainable code.
+              Passionate about both ensuring software quality and contributing
+              to the development process through continuous learning and
+              collaboration.
             </p>
           </div>
 
