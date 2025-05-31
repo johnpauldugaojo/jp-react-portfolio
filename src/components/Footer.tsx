@@ -1,6 +1,6 @@
-import React from "react";
-import { Mail, Linkedin } from "lucide-react";
-import { personalInfo } from "../data/personalInfo";
+import React from 'react';
+import { Mail, Linkedin, Github } from 'lucide-react';
+import { personalInfo } from '../data/personalInfo';
 
 const Footer: React.FC = () => {
   // const currentYear = new Date().getFullYear() - 3;
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
                 {personalInfo.email}
               </a>
             </div>
-            <div className='flex items-center space-x-2'>
+            <div className='flex items-center space-x-2 mb-3'>
               <Linkedin size={18} className='text-emerald-400' />
               <a
                 href={personalInfo.linkedin}
@@ -86,6 +86,17 @@ const Footer: React.FC = () => {
                 className='text-slate-300 hover:text-emerald-300 transition-colors'
               >
                 LinkedIn Profile
+              </a>
+            </div>
+            <div className='flex items-center space-x-2'>
+              <Github size={18} className='text-emerald-400' />
+              <a
+                href={personalInfo.github}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-slate-300 hover:text-emerald-300 transition-colors'
+              >
+                Github
               </a>
             </div>
           </div>

@@ -3,6 +3,7 @@ export interface PersonalInfo {
   title: string;
   email: string;
   linkedin: string;
+  github?: string;
   summary: string;
   skills: Skill[];
 }
@@ -18,6 +19,7 @@ export const personalInfo: PersonalInfo = {
   title: 'QC Engineer',
   email: 'johnpauldugaojo@gmail.com',
   linkedin: 'https://linkedin.com/in/johnpauldugaojo/',
+  github: 'https://github.com/johnpauldugaojo',
   summary:
     'Quality Control Engineer with over 3 years of experience in software testing and quality assurance. Specialized in test automation using Playwright and Cypress, with additional skills in web development. Passionate about delivering high-quality software products and improving development processes.',
   skills: [
