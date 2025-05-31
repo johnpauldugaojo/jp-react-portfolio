@@ -1,4 +1,5 @@
 import React from 'react';
+import DownloadCVButton from '../ui/DownloadCVButton';
 import { ArrowDown } from 'lucide-react';
 import { personalInfo } from '../../data/personalInfo';
 import profile from '../../img/id.jpg';
@@ -31,12 +32,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               together.
             </p>
             <div className='flex flex-wrap gap-4'>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className='px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg'
-              >
-                Get in Touch
-              </button>
+              <DownloadCVButton />
               <button
                 onClick={() => scrollToSection('projects')}
                 className='px-6 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-lg border border-slate-300 dark:border-slate-600 hover:border-emerald-500 dark:hover:border-emerald-500 transition-colors shadow-sm hover:shadow-md'
@@ -68,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
 
       {/* Decorative Elements */}
       <div className='absolute top-20 right-20 w-64 h-64 bg-emerald-300 dark:bg-emerald-700 rounded-full opacity-10 blur-3xl'></div>
-      <div className='absolute bottom-20 left-20 w-96 h-96 bg-blue-300 dark:bg-blue-700 rounded-full opacity-10 blur-3xl'></div>
+      <div className='absolute bottom-20 left-20 w-96 h-96 bg-blue-300 dark:bg-blue-700 rounded-full opacity-10 blur-3xl pointer-events-none'></div>
     </section>
   );
 };
