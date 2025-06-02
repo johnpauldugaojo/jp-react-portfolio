@@ -1,7 +1,7 @@
 import React from 'react';
 import DownloadCVButton from '../ui/DownloadCVButton';
-// import { ArrowDown } from 'lucide-react';
 import { personalInfo } from '../../data/personalInfo';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import profile from '../../img/id.jpg';
 
 interface HeroProps {
@@ -42,30 +42,55 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               </button>
             </div>
           </div>
-          <div className='order-1 lg:order-2 flex justify-center animate-fadeIn'>
-            <div className='relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white dark:border-slate-700 shadow-xl'>
-              <img
-                src={profile}
-                alt='Professional Portrait'
-                className='w-full h-full object-cover'
-              />
+
+          <div className='order-1 lg:order-2 flex justify-center animate-fade-in delay-300'>
+            <div className='relative animate-float'>
+              {/* Profile pic */}
+              <div className='w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-emerald-600 shadow-xl transition-transform duration-300 hover:scale-105'>
+                <img
+                  src={profile}
+                  alt='Professional Portrait'
+                  className='w-full h-full object-cover'
+                />
+              </div>
+              {/* animation */}
+              <div className='absolute -bottom-4 -right-4 w-24 h-24 bg-orange-500 rounded-xl opacity-70 -z-10 animate-pulse-slow'></div>
+              <div className='absolute -top-4 -left-4 w-16 h-16 bg-emerald-500 rounded-lg opacity-70 -z-10 animate-bounce pointer-events-none'></div>
             </div>
           </div>
         </div>
+        <div className='flex items-center gap-4 pt-4'>
+          <a
+            href={personalInfo.github}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110'
+            aria-label='GitHub'
+          >
+            <Github size={22} />
+          </a>
+          <a
+            href={personalInfo.linkedin}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110'
+            aria-label='LinkedIn'
+          >
+            <Linkedin size={22} />
+          </a>
+          <a
+            href={`mailto:${personalInfo.email}`}
+            className='p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110'
+            aria-label='Email'
+          >
+            <Mail size={22} />
+          </a>
+        </div>
       </div>
 
-      {/* <button
-        onClick={() => scrollToSection('about')}
-        className='absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors animate-bounce'
-        aria-label='Scroll down'
-      >
-        <span className='text-sm font-medium mb-2'>Scroll Down</span>
-        <ArrowDown size={20} />
-      </button> */}
-
       {/* Decorative Elements */}
-      <div className='absolute top-20 right-20 w-64 h-64 bg-emerald-300 dark:bg-emerald-700 rounded-full opacity-10 blur-3xl'></div>
-      <div className='absolute bottom-20 left-20 w-96 h-96 bg-blue-300 dark:bg-blue-700 rounded-full opacity-10 blur-3xl pointer-events-none'></div>
+      {/* <div className='absolute top-20 right-20 w-64 h-64 bg-emerald-300 dark:bg-emerald-700 rounded-full opacity-10 blur-3xl'></div>
+      <div className='absolute bottom-20 left-20 w-96 h-96 bg-blue-300 dark:bg-blue-700 rounded-full opacity-10 blur-3xl pointer-events-none'></div> */}
     </section>
   );
 };

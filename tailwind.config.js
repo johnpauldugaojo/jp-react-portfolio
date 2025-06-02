@@ -19,20 +19,32 @@ export default {
         },
       },
       animation: {
-        'bounce': 'bounce 2s infinite',
+        'spin-slow': 'spin 3s linear infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 3s infinite',
+        float: 'float 6s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.5s ease-out forwards',
+        'slide-up': 'slideUp 0.5s ease-out forwards',
       },
       keyframes: {
-        bounce: {
-          '0%, 100%': {
-            transform: 'translateY(0)',
-          },
-          '50%': {
-            transform: 'translateY(-10px)',
-          },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-15px)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        animation: {
+          float: 'float 3s ease-in-out infinite',
         },
       },
       spacing: {
-        '128': '32rem',
+        128: '32rem',
       },
     },
   },
