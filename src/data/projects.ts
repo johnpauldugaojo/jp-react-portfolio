@@ -50,6 +50,6 @@ export const projects: Project[] = [
     description:
       'A modern, responsive single-page portfolio built with React.js and Tailwind CSS, designed to showcase my experience and skills as both a Software Engineer and Quality Control Engineer, highlighting my strengths in development, automated/manual testing, and delivering reliable, high-quality software solutions.',
     tools: ['ReactJS', 'TailwindCSS', 'TypeScript', 'Vite', 'Git'],
-    image: '/src/img/project/proj1.png',
+    image: '/img/project/proj1.png',
   },
 ];

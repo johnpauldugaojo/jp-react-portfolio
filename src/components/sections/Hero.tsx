@@ -2,7 +2,7 @@ import React from 'react';
 import DownloadCVButton from '../ui/DownloadCVButton';
 import { personalInfo } from '../../data/personalInfo';
 import { Github, Linkedin, Mail } from 'lucide-react';
-import profile from '../../img/id.jpg';
+import profile from '/img/id.jpg';
 
 interface HeroProps {
   scrollToSection: (section: string) => void;
