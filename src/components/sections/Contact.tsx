@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormValues((prev) => ({
@@ -84,10 +84,10 @@ const Contact: React.FC = () => {
 
     emailjs
       .sendForm(
-        'service_7k7z2t9', // Replace with your EmailJS service ID
+        'service_3sgiirr', // Replace with your EmailJS service ID
         'template_yczytbr', // Replace with your EmailJS template ID
         formRef.current!, // This references the full form
-        'hNiAkS_UOdxBH_sk2' // Replace with your EmailJS public key
+        'hNiAkS_UOdxBH_sk2', // Replace with your EmailJS public key
       )
       .then(() => {
         setIsSubmitting(false);
