@@ -20,9 +20,11 @@ const About: React.FC = () => {
               Quality Control and Software Engineer with a passion for
               excellence
             </h3>
-            <p className='text-slate-600 dark:text-slate-300 mb-6 leading-relaxed'>
-              {personalInfo.summary}
-            </p>
+            <div className='text-slate-600 dark:text-slate-300 mb-6 leading-relaxed space-y-4'>
+              {personalInfo.summary.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-8'>
               <div className='flex items-start'>
@@ -40,7 +42,7 @@ const About: React.FC = () => {
                   className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
                 />
                 <p className='text-slate-700 dark:text-slate-300'>
-                  Test Automation
+                  Test Automation (Playwright, Cypress)
                 </p>
               </div>
               <div className='flex items-start'>
@@ -49,16 +51,7 @@ const About: React.FC = () => {
                   className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
                 />
                 <p className='text-slate-700 dark:text-slate-300'>
-                  Performance Testing
-                </p>
-              </div>
-              <div className='flex items-start'>
-                <Check
-                  size={20}
-                  className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
-                />
-                <p className='text-slate-700 dark:text-slate-300'>
-                  Security Testing
+                  AI-Driven QA Tools
                 </p>
               </div>
               <div className='flex items-start'>
@@ -76,6 +69,15 @@ const About: React.FC = () => {
                   className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
                 />
                 <p className='text-slate-700 dark:text-slate-300'>
+                  Performance & Security Testing
+                </p>
+              </div>
+              <div className='flex items-start'>
+                <Check
+                  size={20}
+                  className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
+                />
+                <p className='text-slate-700 dark:text-slate-300'>
                   Agile Methodologies
                 </p>
               </div>
@@ -85,7 +87,7 @@ const About: React.FC = () => {
                   className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
                 />
                 <p className='text-slate-700 dark:text-slate-300'>
-                  Web Development
+                  Web Development (React, Node.js)
                 </p>
               </div>
             </div>
@@ -104,6 +106,10 @@ const About: React.FC = () => {
                 src='https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
                 alt='Quality Engineering'
                 className='w-full h-full object-cover'
+                loading='lazy'
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/img/id.jpg';
+                }}
               />
             </div>
 

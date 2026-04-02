@@ -1,8 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { personalInfo, Skill } from "../../data/personalInfo";
 
 const Skills: React.FC = () => {
-  // Group skills by category
   const skillsByCategory = personalInfo.skills.reduce((acc, skill) => {
     if (!acc[skill.category]) {
       acc[skill.category] = [];
@@ -11,12 +11,15 @@ const Skills: React.FC = () => {
     return acc;
   }, {} as Record<string, Skill[]>);
 
-  const categoryNames = {
-    testing: "Testing",
-    automation: "Automation",
-    development: "Development",
-    tools: "Tools & Processes",
+  const categoryMeta: Record<string, { label: string; emoji: string }> = {
+    testing:     { label: "Testing",                    emoji: "🧪" },
+    automation:  { label: "Automation",                 emoji: "⚙️" },
+    development: { label: "Development",                emoji: "💻" },
+    ai:          { label: "AI & Process Automation",    emoji: "🧠" },
+    tools:       { label: "Tools & Processes",          emoji: "🛠" },
   };
+
+  const categoryOrder = ["testing", "automation", "development", "ai", "tools"];
 
   return (
     <section id='skills' className='py-20 bg-slate-50 dark:bg-slate-800'>
@@ -36,37 +39,39 @@ const Skills: React.FC = () => {
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-          {Object.entries(skillsByCategory).map(([category, skills]) => (
-            <div
-              key={category}
-              className='bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 transition-transform hover:scale-[1.02]'
-            >
-              <h3 className='text-xl font-semibold text-slate-800 dark:text-white mb-6'>
-                {categoryNames[category as keyof typeof categoryNames]}
-              </h3>
-
-              <div className='space-y-5'>
-                {skills.map((skill) => (
-                  <div key={skill.name} className='space-y-2'>
-                    <div className='flex justify-between'>
-                      <span className='text-slate-700 dark:text-slate-300 font-medium'>
-                        {skill.name}
-                      </span>
-                      <span className='text-sm text-slate-500 dark:text-slate-400'>
-                        {skill.level * 20}%
-                      </span>
-                    </div>
-                    <div className='w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden'>
-                      <div
-                        className='h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full'
-                        style={{ width: `${skill.level * 20}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+          {categoryOrder.map((category, cardIndex) => {
+            const skills = skillsByCategory[category];
+            if (!skills) return null;
+            const { label, emoji } = categoryMeta[category];
+            return (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4, delay: cardIndex * 0.1 }}
+                className='bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 transition-transform hover:scale-[1.02]'
+              >
+                <h3 className='text-xl font-semibold text-slate-800 dark:text-white mb-6'>
+                  {emoji} {label}
+                </h3>
+                <div className='flex flex-wrap gap-2'>
+                  {skills.map((skill, i) => (
+                    <motion.span
+                      key={skill.name}
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.25, delay: cardIndex * 0.1 + i * 0.05 }}
+                      className='px-3 py-1.5 rounded-full text-sm font-medium bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800'
+                    >
+                      {skill.name}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -27,10 +27,13 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               {personalInfo.title}
             </h2>
             <p className='text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed max-w-2xl'>
-              Committed to ensuring software quality through precise testing,
-              emerging automation skills, and a mindset of continuous
-              improvement. Let's work together to build reliable,
-              high-performing software.
+              I design and build AI-powered tools that transform QA workflows.
+              With strong experience in software testing, automation, and
+              development, I go beyond traditional QA by creating solutions such
+              as voice-driven testing, action recorders, and intelligent test
+              step generators. My focus is on reducing manual effort, improving
+              testing efficiency, and building scalable systems that enhance
+              software quality.
             </p>
             <div className='flex flex-wrap gap-4'>
               <DownloadCVButton />

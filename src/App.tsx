@@ -9,6 +9,7 @@ import Experience from './components/sections/Experience';
 import Contact from './components/sections/Contact';
 import { ThemeProvider } from './hooks/useTheme';
 import { scrollToSection, getActiveSection } from './utils/scrollUtils';
+import ScrollToTop from './components/ui/ScrollToTop';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -41,6 +42,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
+        <ScrollToTop />
       </div>
     </ThemeProvider>
   );

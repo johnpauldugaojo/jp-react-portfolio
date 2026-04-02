@@ -84,10 +84,10 @@ const Contact: React.FC = () => {
 
     emailjs
       .sendForm(
-        'service_3sgiirr', // Replace with your EmailJS service ID
-        'template_yczytbr', // Replace with your EmailJS template ID
-        formRef.current!, // This references the full form
-        'hNiAkS_UOdxBH_sk2', // Replace with your EmailJS public key
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(() => {
         setIsSubmitting(false);
@@ -177,9 +177,11 @@ const Contact: React.FC = () => {
                 Let's work together
               </h3>
               <p className='text-slate-600 dark:text-slate-300 mb-4'>
-                Looking for a quality-focused testing professional for your
-                team? I'd love to hear about your project and how I can help
-                ensure the highest standards of quality.
+                Looking for someone who can not only test but also build tools
+                to improve your QA process? I specialize in creating AI-powered
+                solutions that reduce manual effort and accelerate testing
+                workflows. Let’s discuss how I can help your team scale quality
+                efficiently.
               </p>
             </div>
           </div>
@@ -197,7 +199,7 @@ const Contact: React.FC = () => {
                   htmlFor='name'
                   className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'
                 >
-                  Your Name
+                  Full Name
                 </label>
                 <input
                   type='text'
@@ -224,7 +226,7 @@ const Contact: React.FC = () => {
                   htmlFor='email'
                   className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'
                 >
-                  Your Email
+                  Email
                 </label>
                 <input
                   type='email'
@@ -251,7 +253,7 @@ const Contact: React.FC = () => {
                   htmlFor='message'
                   className='block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2'
                 >
-                  Your Message
+                  Message/Inquiry
                 </label>
                 <textarea
                   id='message'

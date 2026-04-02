@@ -34,8 +34,8 @@ const Experience: React.FC = () => {
               key={exp.id}
               className={`relative mb-12 md:mb-16 ${
                 index % 2 === 0
-                  ? 'md:pr-12 md:text-right md:ml-auto md:mr-0'
-                  : 'md:pl-12 md:text-left md:ml-0 md:mr-auto'
+                  ? 'md:pr-12 md:ml-auto md:mr-0'
+                  : 'md:pl-12 md:ml-0 md:mr-auto'
               } md:w-1/2`}
             >
               {/* Timeline dot */}
@@ -76,23 +76,46 @@ const Experience: React.FC = () => {
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
                     expandedId === exp.id
-                      ? 'max-h-[1000px]'
+                      ? 'max-h-[2000px]'
                       : 'max-h-0 md:max-h-28'
                   }`}
                 >
-                  <h4 className='font-medium text-slate-700 dark:text-slate-200 mb-2'>
-                    Key Responsibilities:
-                  </h4>
-                  <ul className='list-disc list-inside space-y-1 text-slate-600 dark:text-slate-300 text-sm'>
-                    {exp.responsibilities.map((resp, idx) => (
-                      <li
-                        key={idx}
-                        className={index % 2 === 0 ? 'md:text-right' : ''}
-                      >
-                        {resp}
-                      </li>
-                    ))}
-                  </ul>
+                  {exp.responsibilities && (
+                    <>
+                      <h4 className='font-medium text-slate-700 dark:text-slate-200 mb-2'>
+                        Key Responsibilities:
+                      </h4>
+                      <ul className='list-disc list-inside space-y-1 text-slate-600 dark:text-slate-300 text-sm'>
+                        {exp.responsibilities.map((resp, idx) => (
+                          <li key={idx}>
+                            {resp}
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+
+                  {exp.projects && (
+                    <div className='space-y-5'>
+                      {exp.projects.map((project) => (
+                        <div key={project.name}>
+                          <h4 className='font-medium text-slate-700 dark:text-slate-200 mb-1'>
+                            Project: {project.name}
+                          </h4>
+                          {project.client && (
+                            <p className='text-xs text-emerald-600 dark:text-emerald-400 mb-2'>
+                              Client: {project.client}
+                            </p>
+                          )}
+                          <ul className='list-disc list-inside space-y-1 text-slate-600 dark:text-slate-300 text-sm'>
+                            {project.responsibilities.map((resp, idx) => (
+                              <li key={idx}>{resp}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {expandedId !== exp.id && (
