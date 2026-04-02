@@ -17,6 +17,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
+    { id: 'ai-projects', label: 'AI Projects' },
     { id: 'experience', label: 'Experience' },
     { id: 'contact', label: 'Contact' },
   ];

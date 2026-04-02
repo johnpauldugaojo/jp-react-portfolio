@@ -7,6 +7,7 @@ import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
 import Experience from './components/sections/Experience';
 import Contact from './components/sections/Contact';
+import AIProjects from './components/sections/AIProjects';
 import { ThemeProvider } from './hooks/useTheme';
 import { scrollToSection, getActiveSection } from './utils/scrollUtils';
 import ScrollToTop from './components/ui/ScrollToTop';
@@ -38,6 +39,7 @@ function App() {
           <About />
           <Skills />
           <Projects />
+          <AIProjects />
           <Experience />
           <Contact />
         </main>
