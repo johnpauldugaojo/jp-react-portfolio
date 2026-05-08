@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(ls C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio/public/ && ls C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio/.env* 2>/dev/null || echo \"No .env files found\")",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm install animejs)",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && node -e \"const a = require\\('./node_modules/animejs/package.json'\\); console.log\\(a.version\\)\")",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm install vanta three)"
     ]
   },
   "enableAllProjectMcpServers": true,

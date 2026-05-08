@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { Quote } from 'lucide-react';
 import { testimonials } from '../../data/testimonials';
+import { useAnimeOnView } from '../../hooks/useAnimeOnView';
 
 const Testimonials: React.FC = () => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  const lineRef = useAnimeOnView<HTMLDivElement>(
+    { scaleX: [0, 1], duration: 700, ease: 'outExpo' },
+    { transform: 'scaleX(0)', transformOrigin: 'center' },
+  );
 
   const toggleExpand = (id: number) => {
     setExpandedId(expandedId === id ? null : id);
@@ -17,7 +23,7 @@ const Testimonials: React.FC = () => {
             What People{' '}
             <span className='text-emerald-600 dark:text-emerald-400'>Say</span>
           </h2>
-          <div className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
+          <div ref={lineRef} className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
           <p className='mt-6 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto'>
             Feedback from colleagues and managers I've had the pleasure of working with.
           </p>

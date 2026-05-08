@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { projects } from '../../data/projects';
 import { ExternalLink } from 'lucide-react';
+import { useAnimeOnView } from '../../hooks/useAnimeOnView';
 
 const Projects: React.FC = () => {
   const [activeProject, setActiveProject] = useState<number | null>(null);
+
+  const lineRef = useAnimeOnView<HTMLDivElement>(
+    { scaleX: [0, 1], duration: 700, ease: 'outExpo' },
+    { transform: 'scaleX(0)', transformOrigin: 'center' },
+  );
 
   return (
     <section id='projects' className='py-20 bg-white dark:bg-slate-900'>
@@ -15,7 +21,7 @@ const Projects: React.FC = () => {
               Projects
             </span>
           </h2>
-          <div className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
+          <div ref={lineRef} className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
           <p className='mt-6 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto'>
             Here are some of the key projects I've worked on that showcase my
             skills in quality assurance and test automation.

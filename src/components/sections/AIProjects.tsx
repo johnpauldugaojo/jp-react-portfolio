@@ -2,8 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github } from 'lucide-react';
 import { aiProjects } from '../../data/aiProjects';
+import { useAnimeOnView } from '../../hooks/useAnimeOnView';
 
 const AIProjects: React.FC = () => {
+  const lineRef = useAnimeOnView<HTMLDivElement>(
+    { scaleX: [0, 1], duration: 700, ease: 'outExpo' },
+    { transform: 'scaleX(0)', transformOrigin: 'center' },
+  );
+
   return (
     <section id='ai-projects' className='py-20 bg-white dark:bg-slate-900'>
       <div className='container mx-auto px-6'>
@@ -14,7 +20,7 @@ const AIProjects: React.FC = () => {
               Projects
             </span>
           </h2>
-          <div className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
+          <div ref={lineRef} className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
           <p className='mt-6 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto'>
             Tools I built to solve real QA problems combining voice, automation,
             and AI to reduce manual effort and accelerate testing workflows.

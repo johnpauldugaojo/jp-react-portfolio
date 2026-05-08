@@ -1,8 +1,14 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import { personalInfo } from '../../data/personalInfo';
+import { useAnimeOnView } from '../../hooks/useAnimeOnView';
 
 const About: React.FC = () => {
+  const lineRef = useAnimeOnView<HTMLDivElement>(
+    { scaleX: [0, 1], duration: 700, ease: 'outExpo' },
+    { transform: 'scaleX(0)', transformOrigin: 'center' },
+  );
+
   return (
     <section id='about' className='py-20 bg-white dark:bg-slate-900'>
       <div className='container mx-auto px-6'>
@@ -11,7 +17,7 @@ const About: React.FC = () => {
             About{' '}
             <span className='text-emerald-600 dark:text-emerald-400'>Me</span>
           </h2>
-          <div className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
+          <div ref={lineRef} className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
         </div>
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
