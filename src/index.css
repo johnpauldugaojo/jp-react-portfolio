@@ -26,6 +26,20 @@ body {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+/* Marquee / skills carousel */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

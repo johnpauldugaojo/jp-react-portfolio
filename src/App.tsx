@@ -8,6 +8,8 @@ import Projects from './components/sections/Projects';
 import Experience from './components/sections/Experience';
 import Contact from './components/sections/Contact';
 import AIProjects from './components/sections/AIProjects';
+import Testimonials from './components/sections/Testimonials';
+import SkillsCarousel from './components/sections/SkillsCarousel';
 import { ThemeProvider } from './hooks/useTheme';
 import { scrollToSection, getActiveSection } from './utils/scrollUtils';
 import ScrollToTop from './components/ui/ScrollToTop';
@@ -38,9 +40,11 @@ function App() {
           <Hero scrollToSection={scrollToSection} />
           <About />
           <Skills />
+          <SkillsCarousel />
           <Projects />
           <AIProjects />
           <Experience />
+          <Testimonials />
           <Contact />
         </main>
         <Footer />

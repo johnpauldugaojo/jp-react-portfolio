@@ -17,7 +17,9 @@ export const getActiveSection = (): string => {
     'about',
     'skills',
     'projects',
+    'ai-projects',
     'experience',
+    'testimonials',
     'contact'
   ];
   
