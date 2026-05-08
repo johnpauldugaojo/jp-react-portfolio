@@ -50,11 +50,11 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
           className='font-bold text-xl cursor-pointer'
           onClick={() => scrollToSection('hero')}
         >
-          <span className='text-emerald-600 dark:text-emerald-400'>Jayps</span>{' '}
+          <span className='text-cyan-600 dark:text-cyan-400'>Jayps</span>{' '}
           <span>
             <SquareDashedBottomCode
               size={30}
-              className='inline-block align-middle text-emerald-600 dark:text-emerald-400'
+              className='inline-block align-middle text-cyan-600 dark:text-cyan-400'
             />
           </span>
           {/* <span className='text-slate-800 dark:text-white'>Engineer</span> */}
@@ -69,13 +69,13 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
               className={`text-sm font-medium relative px-1 py-2 transition-colors
                 ${
                   activeSection === item.id
-                    ? 'text-emerald-600 dark:text-emerald-400'
-                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
+                    ? 'text-cyan-600 dark:text-cyan-400'
+                    : 'text-slate-600 hover:text-slate-900 dark:text-violet-100 dark:hover:text-white'
                 }`}
             >
               {item.label}
               {activeSection === item.id && (
-                <span className='absolute bottom-0 left-0 w-full h-0.5 bg-emerald-600 dark:bg-emerald-400 rounded-full' />
+                <span className='absolute bottom-0 left-0 w-full h-0.5 bg-cyan-600 dark:bg-cyan-400 rounded-full' />
               )}
             </button>
           ))}
@@ -111,7 +111,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
           </button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className='text-slate-700 dark:text-slate-200'
+            className='text-slate-700 dark:text-violet-100'
             aria-label='Toggle menu'
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -129,8 +129,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
                 onClick={() => handleNavClick(item.id)}
                 className={`text-left p-2 rounded-md ${
                   activeSection === item.id
-                    ? 'bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 font-medium'
-                    : 'text-slate-700 dark:text-slate-300'
+                    ? 'bg-slate-100 dark:bg-slate-800 text-cyan-600 dark:text-cyan-400 font-medium'
+                    : 'text-slate-700 dark:text-violet-100'
                 }`}
               >
                 {item.label}

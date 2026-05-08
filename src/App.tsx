@@ -13,6 +13,7 @@ import SkillsCarousel from './components/sections/SkillsCarousel';
 import { ThemeProvider } from './hooks/useTheme';
 import { scrollToSection, getActiveSection } from './utils/scrollUtils';
 import ScrollToTop from './components/ui/ScrollToTop';
+import VantaBackground from './components/VantaBackground';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -31,7 +32,8 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-800 dark:text-white">
+      <div className="min-h-screen text-slate-800 dark:text-violet-50">
+        <VantaBackground />
         <Header 
           activeSection={activeSection} 
           scrollToSection={scrollToSection} 

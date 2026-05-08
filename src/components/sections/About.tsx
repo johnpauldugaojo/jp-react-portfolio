@@ -4,14 +4,14 @@ import { personalInfo } from '../../data/personalInfo';
 
 const About: React.FC = () => {
   return (
-    <section id='about' className='py-20 bg-white dark:bg-slate-900'>
+    <section id='about' className='py-20'>
       <div className='container mx-auto px-6'>
         <div className='mb-12 text-center'>
           <h2 className='text-3xl font-bold text-slate-800 dark:text-white mb-4'>
             About{' '}
-            <span className='text-emerald-600 dark:text-emerald-400'>Me</span>
+            <span className='text-cyan-600 dark:text-cyan-400'>Me</span>
           </h2>
-          <div className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
+          <div className='w-20 h-1 bg-cyan-600 dark:bg-cyan-400 mx-auto rounded-full'></div>
         </div>
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
@@ -20,7 +20,7 @@ const About: React.FC = () => {
               Quality Control and Software Engineer with a passion for
               excellence
             </h3>
-            <div className='text-slate-600 dark:text-slate-300 mb-6 leading-relaxed space-y-4'>
+            <div className='text-slate-600 dark:text-violet-100 mb-6 leading-relaxed space-y-4'>
               {personalInfo.summary.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
@@ -30,63 +30,63 @@ const About: React.FC = () => {
               <div className='flex items-start'>
                 <Check
                   size={20}
-                  className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
+                  className='text-cyan-600 dark:text-cyan-400 mt-1 mr-2 flex-shrink-0'
                 />
-                <p className='text-slate-700 dark:text-slate-300'>
+                <p className='text-slate-700 dark:text-violet-100'>
                   End-to-End Testing
                 </p>
               </div>
               <div className='flex items-start'>
                 <Check
                   size={20}
-                  className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
+                  className='text-cyan-600 dark:text-cyan-400 mt-1 mr-2 flex-shrink-0'
                 />
-                <p className='text-slate-700 dark:text-slate-300'>
+                <p className='text-slate-700 dark:text-violet-100'>
                   Test Automation (Playwright, Cypress)
                 </p>
               </div>
               <div className='flex items-start'>
                 <Check
                   size={20}
-                  className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
+                  className='text-cyan-600 dark:text-cyan-400 mt-1 mr-2 flex-shrink-0'
                 />
-                <p className='text-slate-700 dark:text-slate-300'>
+                <p className='text-slate-700 dark:text-violet-100'>
                   AI-Driven QA Tools
                 </p>
               </div>
               <div className='flex items-start'>
                 <Check
                   size={20}
-                  className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
+                  className='text-cyan-600 dark:text-cyan-400 mt-1 mr-2 flex-shrink-0'
                 />
-                <p className='text-slate-700 dark:text-slate-300'>
+                <p className='text-slate-700 dark:text-violet-100'>
                   CI/CD Integration
                 </p>
               </div>
               <div className='flex items-start'>
                 <Check
                   size={20}
-                  className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
+                  className='text-cyan-600 dark:text-cyan-400 mt-1 mr-2 flex-shrink-0'
                 />
-                <p className='text-slate-700 dark:text-slate-300'>
+                <p className='text-slate-700 dark:text-violet-100'>
                   Performance & Security Testing
                 </p>
               </div>
               <div className='flex items-start'>
                 <Check
                   size={20}
-                  className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
+                  className='text-cyan-600 dark:text-cyan-400 mt-1 mr-2 flex-shrink-0'
                 />
-                <p className='text-slate-700 dark:text-slate-300'>
+                <p className='text-slate-700 dark:text-violet-100'>
                   Agile Methodologies
                 </p>
               </div>
               <div className='flex items-start'>
                 <Check
                   size={20}
-                  className='text-emerald-600 dark:text-emerald-400 mt-1 mr-2 flex-shrink-0'
+                  className='text-cyan-600 dark:text-cyan-400 mt-1 mr-2 flex-shrink-0'
                 />
-                <p className='text-slate-700 dark:text-slate-300'>
+                <p className='text-slate-700 dark:text-violet-100'>
                   Web Development (React, Node.js)
                 </p>
               </div>
@@ -94,7 +94,7 @@ const About: React.FC = () => {
 
             <a
               href='#contact'
-              className='inline-block px-6 py-3 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white font-medium hover:bg-emerald-100 dark:hover:bg-slate-700 transition-colors'
+              className='inline-block px-6 py-3 rounded-lg bg-white/15 dark:bg-slate-800/15 text-slate-800 dark:text-white font-medium hover:bg-cyan-100/50 dark:hover:bg-slate-700/30 transition-colors'
             >
               Let's Work Together
             </a>
@@ -115,7 +115,7 @@ const About: React.FC = () => {
 
             {/* Decorative elements */}
             <div className='absolute -bottom-6 -left-6 w-48 h-48 bg-slate-100 dark:bg-slate-800 rounded-lg -z-10'></div>
-            <div className='absolute -top-6 -right-6 w-32 h-32 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg -z-10'></div>
+            <div className='absolute -top-6 -right-6 w-32 h-32 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg -z-10'></div>
           </div>
         </div>
       </div>

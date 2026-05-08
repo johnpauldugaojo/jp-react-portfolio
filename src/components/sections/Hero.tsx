@@ -12,21 +12,21 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
   return (
     <section
       id='hero'
-      className='min-h-screen flex items-center pt-16 pb-16 relative bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800'
+      className='min-h-screen flex items-center pt-16 pb-16 relative bg-white/5 dark:bg-slate-900/5'
     >
       <div className='container mx-auto px-6'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
           <div className='order-2 lg:order-1 animate-fadeIn'>
             <h1 className='text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-4'>
               Hi, I'm{' '}
-              <span className='text-emerald-600 dark:text-emerald-400'>
+              <span className='text-cyan-600 dark:text-cyan-400'>
                 {personalInfo.name}
               </span>
             </h1>
-            <h2 className='text-2xl md:text-3xl font-medium text-slate-600 dark:text-slate-300 mb-6'>
+            <h2 className='text-2xl md:text-3xl font-medium text-slate-600 dark:text-violet-100 mb-6'>
               {personalInfo.title}
             </h2>
-            <p className='text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed max-w-2xl'>
+            <p className='text-lg text-slate-600 dark:text-violet-100 mb-8 leading-relaxed max-w-2xl'>
               I design and build AI-powered tools that transform QA workflows.
               With strong experience in software testing, automation, and
               development, I go beyond traditional QA by creating solutions such
@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               <DownloadCVButton />
               <button
                 onClick={() => scrollToSection('projects')}
-                className='px-6 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-lg border border-slate-300 dark:border-slate-600 hover:border-emerald-500 dark:hover:border-emerald-500 transition-colors shadow-sm hover:shadow-md'
+                className='px-6 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-lg border border-slate-300 dark:border-slate-600 hover:border-cyan-500 dark:hover:border-cyan-500 transition-colors shadow-sm hover:shadow-md'
               >
                 View Projects
               </button>
@@ -49,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           <div className='order-1 lg:order-2 flex justify-center animate-fade-in delay-300'>
             <div className='relative animate-float'>
               {/* Profile pic */}
-              <div className='w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-emerald-600 shadow-xl transition-transform duration-300 hover:scale-105'>
+              <div className='w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-cyan-600 shadow-xl transition-transform duration-300 hover:scale-105'>
                 <img
                   src={profile}
                   alt='Professional Portrait'
@@ -58,7 +58,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               </div>
               {/* animation */}
               <div className='absolute -bottom-4 -right-4 w-24 h-24 bg-orange-500 rounded-xl opacity-70 -z-10 animate-pulse-slow'></div>
-              <div className='absolute -top-4 -left-4 w-16 h-16 bg-emerald-500 rounded-lg opacity-70 -z-10 animate-bounce pointer-events-none'></div>
+              <div className='absolute -top-4 -left-4 w-16 h-16 bg-cyan-500 rounded-lg opacity-70 -z-10 animate-bounce pointer-events-none'></div>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
       </div>
 
       {/* Decorative Elements */}
-      {/* <div className='absolute top-20 right-20 w-64 h-64 bg-emerald-300 dark:bg-emerald-700 rounded-full opacity-10 blur-3xl'></div>
+      {/* <div className='absolute top-20 right-20 w-64 h-64 bg-cyan-300 dark:bg-cyan-700 rounded-full opacity-10 blur-3xl'></div>
       <div className='absolute bottom-20 left-20 w-96 h-96 bg-blue-300 dark:bg-blue-700 rounded-full opacity-10 blur-3xl pointer-events-none'></div> */}
     </section>
   );

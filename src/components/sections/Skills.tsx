@@ -22,17 +22,17 @@ const Skills: React.FC = () => {
   const categoryOrder = ["testing", "automation", "development", "ai", "tools"];
 
   return (
-    <section id='skills' className='py-20 bg-slate-50 dark:bg-slate-800'>
+    <section id='skills' className='py-20'>
       <div className='container mx-auto px-6'>
         <div className='mb-12 text-center'>
           <h2 className='text-3xl font-bold text-slate-800 dark:text-white mb-4'>
             My{" "}
-            <span className='text-emerald-600 dark:text-emerald-400'>
+            <span className='text-cyan-600 dark:text-cyan-400'>
               Skills
             </span>
           </h2>
-          <div className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
-          <p className='mt-6 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto'>
+          <div className='w-20 h-1 bg-cyan-600 dark:bg-cyan-400 mx-auto rounded-full'></div>
+          <p className='mt-6 text-slate-600 dark:text-violet-100 max-w-2xl mx-auto'>
             My expertise spans across various testing methodologies, automation
             frameworks, and development technologies.
           </p>
@@ -50,7 +50,7 @@ const Skills: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.4, delay: cardIndex * 0.1 }}
-                className='bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 transition-transform hover:scale-[1.02]'
+                className='bg-white/10 dark:bg-slate-800/15 rounded-xl shadow-md p-6 transition-transform hover:scale-[1.02]'
               >
                 <h3 className='text-xl font-semibold text-slate-800 dark:text-white mb-6'>
                   {emoji} {label}
@@ -63,7 +63,7 @@ const Skills: React.FC = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.25, delay: cardIndex * 0.1 + i * 0.05 }}
-                      className='px-3 py-1.5 rounded-full text-sm font-medium bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800'
+                      className='px-3 py-1.5 rounded-full text-sm font-medium bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800'
                     >
                       {skill.name}
                     </motion.span>

@@ -6,16 +6,16 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='bg-slate-900 text-white py-12'>
+    <footer className='bg-slate-900/15 text-white py-12'>
       <div className='container mx-auto px-6'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           <div>
             <h3 className='text-xl font-bold mb-4'>
-              <span className='text-emerald-400'>QA Automation</span>{' '}
+              <span className='text-cyan-400'>QA Automation</span>{' '}
               <span>Engineer</span>
             </h3>
 
-            <p className='text-slate-300 mb-4'>
+            <p className='text-violet-100 mb-4'>
               QA Engineer and Software Engineer focused on building AI-powered
               tools and automation solutions. I design systems that improve
               testing efficiency, reduce manual effort, and enhance overall
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href='#about'
-                  className='text-slate-300 hover:text-emerald-300 transition-colors'
+                  className='text-violet-100 hover:text-cyan-300 transition-colors'
                 >
                   About Me
                 </a>
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href='#skills'
-                  className='text-slate-300 hover:text-emerald-300 transition-colors'
+                  className='text-violet-100 hover:text-cyan-300 transition-colors'
                 >
                   Skills
                 </a>
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href='#projects'
-                  className='text-slate-300 hover:text-emerald-300 transition-colors'
+                  className='text-violet-100 hover:text-cyan-300 transition-colors'
                 >
                   Projects
                 </a>
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href='#experience'
-                  className='text-slate-300 hover:text-emerald-300 transition-colors'
+                  className='text-violet-100 hover:text-cyan-300 transition-colors'
                 >
                   Experience
                 </a>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   href='#contact'
-                  className='text-slate-300 hover:text-emerald-300 transition-colors'
+                  className='text-violet-100 hover:text-cyan-300 transition-colors'
                 >
                   Contact
                 </a>
@@ -72,11 +72,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className='text-lg font-semibold mb-4'>Connect</h3>
             <div className='flex items-center space-x-2 mb-3'>
-              <Mail size={18} className='text-emerald-400' aria-hidden='true' />
+              <Mail size={18} className='text-cyan-400' aria-hidden='true' />
               <a
                 href={`mailto:${personalInfo.email}`}
                 aria-label={`Email ${personalInfo.name}`}
-                className='text-slate-300 hover:text-emerald-300 transition-colors'
+                className='text-violet-100 hover:text-cyan-300 transition-colors'
               >
                 {personalInfo.email}
               </a>
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
             <div className='flex items-center space-x-2 mb-3'>
               <Linkedin
                 size={18}
-                className='text-emerald-400'
+                className='text-cyan-400'
                 aria-hidden='true'
               />
               <a
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label={`${personalInfo.name} on LinkedIn`}
-                className='text-slate-300 hover:text-emerald-300 transition-colors'
+                className='text-violet-100 hover:text-cyan-300 transition-colors'
               >
                 LinkedIn Profile
               </a>
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
             <div className='flex items-center space-x-2'>
               <Github
                 size={18}
-                className='text-emerald-400'
+                className='text-cyan-400'
                 aria-hidden='true'
               />
               <a
@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label={`${personalInfo.name} on GitHub`}
-                className='text-slate-300 hover:text-emerald-300 transition-colors'
+                className='text-violet-100 hover:text-cyan-300 transition-colors'
               >
                 Github
               </a>
@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className='border-t border-slate-700 mt-8 pt-8 text-center text-slate-400 text-sm'>
+        <div className='border-t border-slate-700 mt-8 pt-8 text-center text-violet-200 text-sm'>
           <p>
             © {currentYear} {personalInfo.name}. All rights reserved.
           </p>

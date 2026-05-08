@@ -10,17 +10,17 @@ const Experience: React.FC = () => {
   };
 
   return (
-    <section id='experience' className='py-20 bg-slate-50 dark:bg-slate-800'>
+    <section id='experience' className='py-20'>
       <div className='container mx-auto px-6'>
         <div className='mb-12 text-center'>
           <h2 className='text-3xl font-bold text-slate-800 dark:text-white mb-4'>
             Work{' '}
-            <span className='text-emerald-600 dark:text-emerald-400'>
+            <span className='text-cyan-600 dark:text-cyan-400'>
               Experience
             </span>
           </h2>
-          <div className='w-20 h-1 bg-emerald-600 dark:bg-emerald-400 mx-auto rounded-full'></div>
-          <p className='mt-6 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto'>
+          <div className='w-20 h-1 bg-cyan-600 dark:bg-cyan-400 mx-auto rounded-full'></div>
+          <p className='mt-6 text-slate-600 dark:text-violet-100 max-w-2xl mx-auto'>
             My professional journey in the quality assurance and testing field.
           </p>
         </div>
@@ -40,7 +40,7 @@ const Experience: React.FC = () => {
             >
               {/* Timeline dot */}
               <div
-                className={`absolute top-0 w-5 h-5 rounded-full border-4 border-emerald-600 dark:border-emerald-400 bg-white dark:bg-slate-800 z-10 ${
+                className={`absolute top-0 w-5 h-5 rounded-full border-4 border-cyan-600 dark:border-cyan-400 bg-white dark:bg-slate-800 z-10 ${
                   index % 2 === 0
                     ? 'md:-left-2.5 left-0'
                     : 'md:-right-2.5 right-0'
@@ -48,14 +48,14 @@ const Experience: React.FC = () => {
               ></div>
 
               <div
-                className={`bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8 md:ml-0 md:mr-0 transition-all cursor-pointer hover:shadow-lg ${
+                className={`bg-white/10 dark:bg-slate-800/15 rounded-xl shadow-md p-6 ml-8 md:ml-0 md:mr-0 transition-all cursor-pointer hover:shadow-lg ${
                   expandedId === exp.id
-                    ? 'ring-2 ring-emerald-500 dark:ring-emerald-400'
+                    ? 'ring-2 ring-cyan-500 dark:ring-cyan-400'
                     : ''
                 }`}
                 onClick={() => toggleExpand(exp.id)}
               >
-                <span className='inline-block px-3 py-1 text-xs font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-full mb-4'>
+                <span className='inline-block px-3 py-1 text-xs font-medium bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full mb-4'>
                   {exp.startDate} - {exp.endDate || 'Present'}
                 </span>
 
@@ -63,12 +63,12 @@ const Experience: React.FC = () => {
                   {exp.role}
                 </h3>
 
-                <div className='flex items-center mb-1 text-slate-600 dark:text-slate-300'>
+                <div className='flex items-center mb-1 text-slate-600 dark:text-violet-100'>
                   <BriefcaseIcon size={16} className='mr-2' />
                   <span>{exp.company}</span>
                 </div>
 
-                <div className='flex items-center mb-4 text-slate-600 dark:text-slate-300'>
+                <div className='flex items-center mb-4 text-slate-600 dark:text-violet-100'>
                   <MapPinIcon size={16} className='mr-2' />
                   <span>{exp.location}</span>
                 </div>
@@ -82,10 +82,10 @@ const Experience: React.FC = () => {
                 >
                   {exp.responsibilities && (
                     <>
-                      <h4 className='font-medium text-slate-700 dark:text-slate-200 mb-2'>
+                      <h4 className='font-medium text-slate-700 dark:text-violet-100 mb-2'>
                         Key Responsibilities:
                       </h4>
-                      <ul className='list-disc list-inside space-y-1 text-slate-600 dark:text-slate-300 text-sm'>
+                      <ul className='list-disc list-inside space-y-1 text-slate-600 dark:text-violet-100 text-sm'>
                         {exp.responsibilities.map((resp, idx) => (
                           <li key={idx}>
                             {resp}
@@ -99,15 +99,15 @@ const Experience: React.FC = () => {
                     <div className='space-y-5'>
                       {exp.projects.map((project) => (
                         <div key={project.name}>
-                          <h4 className='font-medium text-slate-700 dark:text-slate-200 mb-1'>
+                          <h4 className='font-medium text-slate-700 dark:text-violet-100 mb-1'>
                             Project: {project.name}
                           </h4>
                           {project.client && (
-                            <p className='text-xs text-emerald-600 dark:text-emerald-400 mb-2'>
+                            <p className='text-xs text-cyan-600 dark:text-cyan-400 mb-2'>
                               Client: {project.client}
                             </p>
                           )}
-                          <ul className='list-disc list-inside space-y-1 text-slate-600 dark:text-slate-300 text-sm'>
+                          <ul className='list-disc list-inside space-y-1 text-slate-600 dark:text-violet-100 text-sm'>
                             {project.responsibilities.map((resp, idx) => (
                               <li key={idx}>{resp}</li>
                             ))}
@@ -118,7 +118,7 @@ const Experience: React.FC = () => {
                   )}
                 </div>
 
-                <div className='mt-3 text-sm font-medium text-emerald-600 dark:text-emerald-400'>
+                <div className='mt-3 text-sm font-medium text-cyan-600 dark:text-cyan-400'>
                   {expandedId === exp.id ? 'Show less' : 'Read more'}
                 </div>
               </div>

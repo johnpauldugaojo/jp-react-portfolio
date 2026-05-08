@@ -23,7 +23,7 @@ const SkillsCarousel: React.FC = () => {
   const items = [...skillLogos, ...skillLogos];
 
   return (
-    <div className='py-10 bg-white dark:bg-slate-900 overflow-hidden border-y border-slate-100 dark:border-slate-800'>
+    <div className='py-10 overflow-hidden'>
       <div className='flex animate-marquee w-max'>
         {items.map((skill, i) => (
           <div
@@ -37,7 +37,7 @@ const SkillsCarousel: React.FC = () => {
                 className='w-full h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity'
               />
             </div>
-            <span className='text-xs text-slate-500 dark:text-slate-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors whitespace-nowrap'>
+            <span className='text-xs text-slate-500 dark:text-violet-200 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors whitespace-nowrap'>
               {skill.name}
             </span>
           </div>
