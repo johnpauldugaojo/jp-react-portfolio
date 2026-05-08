@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github } from 'lucide-react';
 import { aiProjects } from '../../data/aiProjects';
 
 const AIProjects: React.FC = () => {
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  const toggleExpand = (id: number) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   return (
     <section id='ai-projects' className='py-20 bg-white dark:bg-slate-900'>
       <div className='container mx-auto px-6'>
@@ -21,7 +27,7 @@ const AIProjects: React.FC = () => {
           </p>
         </div>
 
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {aiProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -29,7 +35,10 @@ const AIProjects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.45, delay: index * 0.15 }}
-              className='bg-slate-50 dark:bg-slate-800 rounded-2xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300'
+              className={`bg-slate-50 dark:bg-slate-800 rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 cursor-pointer ${
+                expandedId === project.id ? 'ring-2 ring-emerald-500 dark:ring-emerald-400' : ''
+              }`}
+              onClick={() => toggleExpand(project.id)}
             >
               <div className='flex items-start justify-between gap-4 mb-3'>
                 <div>
@@ -42,9 +51,17 @@ const AIProjects: React.FC = () => {
                 </div>
               </div>
 
-              <p className='text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5'>
-                {project.description}
-              </p>
+              <div className={`overflow-hidden transition-all duration-300 ${
+                expandedId === project.id ? 'max-h-[2000px]' : 'max-h-16'
+              }`}>
+                <p className='text-slate-600 dark:text-slate-300 text-sm leading-relaxed'>
+                  {project.description}
+                </p>
+              </div>
+
+              <div className='mt-3 text-xs font-medium text-emerald-600 dark:text-emerald-400'>
+                {expandedId === project.id ? 'Show less' : 'Read more'}
+              </div>
 
               {project.github && (
                 <a
@@ -52,7 +69,8 @@ const AIProjects: React.FC = () => {
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label={`${project.title} GitHub`}
-                  className='inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors'
+                  onClick={(e) => e.stopPropagation()}
+                  className='inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors mt-4'
                 >
                   <Github size={16} /> View on GitHub
                 </a>
