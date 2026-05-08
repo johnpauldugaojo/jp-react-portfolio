@@ -118,11 +118,9 @@ const Experience: React.FC = () => {
                   )}
                 </div>
 
-                {expandedId !== exp.id && (
-                  <div className='mt-2 text-sm text-emerald-600 dark:text-emerald-400 md:hidden'>
-                    Click to expand
-                  </div>
-                )}
+                <div className='mt-3 text-sm font-medium text-emerald-600 dark:text-emerald-400'>
+                  {expandedId === exp.id ? 'Show less' : 'Read more'}
+                </div>
               </div>
             </div>
           ))}
