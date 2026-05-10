@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+// @ts-ignore
+import NET from 'vanta/dist/vanta.net.min';
 import { useTheme } from '../hooks/useTheme';
 
 const DARK_BG = 0x23153c;
@@ -22,27 +24,24 @@ const VantaBackground: React.FC = () => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    import('vanta/dist/vanta.net.min').then((module) => {
-      const NET = module.default;
-      if (vantaRef.current && !vantaEffect.current) {
-        vantaEffect.current = NET({
-          el: vantaRef.current,
-          THREE: patchedTHREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: theme === 'dark' ? DARK_COLOR : LIGHT_COLOR,
-          backgroundColor: theme === 'dark' ? DARK_BG : LIGHT_BG,
-          points: 10.0,
-          maxDistance: 22.0,
-          spacing: 18.0,
-        });
-      }
-    });
+    if (vantaRef.current && !vantaEffect.current) {
+      vantaEffect.current = NET({
+        el: vantaRef.current,
+        THREE: patchedTHREE,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: theme === 'dark' ? DARK_COLOR : LIGHT_COLOR,
+        backgroundColor: theme === 'dark' ? DARK_BG : LIGHT_BG,
+        points: 10.0,
+        maxDistance: 22.0,
+        spacing: 18.0,
+      });
+    }
 
     return () => {
       if (vantaEffect.current) {
@@ -61,7 +60,13 @@ const VantaBackground: React.FC = () => {
     }
   }, [theme]);
 
-  return <div ref={vantaRef} className='fixed inset-0 -z-10' />;
+  return (
+    <div
+      ref={vantaRef}
+      className='fixed inset-0 -z-10'
+      style={{ backgroundColor: theme === 'dark' ? '#23153c' : '#f1f5f9' }}
+    />
+  );
 };
 
 export default VantaBackground;

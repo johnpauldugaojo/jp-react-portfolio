@@ -25,6 +25,7 @@ const Contact: React.FC = () => {
   const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const validateForm = (): boolean => {
     const errors: FormErrors = {};
@@ -101,7 +102,7 @@ const Contact: React.FC = () => {
       .catch((error) => {
         console.error('Email send error:', error);
         setIsSubmitting(false);
-        alert('Failed to send email. Please try again later.');
+        setSubmitError(true);
       });
   };
 
@@ -191,6 +192,23 @@ const Contact: React.FC = () => {
               {submitSuccess && (
                 <div className='bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 p-4 rounded-lg mb-6 animate-fadeIn'>
                   Thank you for your message! I'll get back to you soon.
+                </div>
+              )}
+
+              {submitError && (
+                <div className='bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 p-4 rounded-lg mb-6 animate-fadeIn text-sm'>
+                  <p className='font-semibold mb-1'>I'm having trouble connecting right now.</p>
+                  <p>
+                    Please reach out directly at{' '}
+                    <a href={`mailto:${personalInfo.email}`} className='underline hover:text-red-900 dark:hover:text-red-100'>
+                      {personalInfo.email}
+                    </a>{' '}
+                    or on{' '}
+                    <a href={personalInfo.linkedin} target='_blank' rel='noopener noreferrer' className='underline hover:text-red-900 dark:hover:text-red-100'>
+                      LinkedIn
+                    </a>
+                    !
+                  </p>
                 </div>
               )}
 

@@ -10,7 +10,12 @@
       "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm run build 2>&1 | tail -8)",
       "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm run build 2>&1 | tail -6)",
       "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm install @anthropic-ai/sdk)",
-      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm run build 2>&1 | tail -10)"
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm run build 2>&1 | tail -10)",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && vercel --version 2>&1)",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm install express cors dotenv --save-dev)",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm install @google/generative-ai)",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && rm src/components/PortfolioChatbot.tsx api/chat.js server.js)",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm uninstall @anthropic-ai/sdk @google/generative-ai express cors dotenv)"
     ]
   },
   "enableAllProjectMcpServers": true,

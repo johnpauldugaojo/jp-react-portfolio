@@ -14,7 +14,6 @@ import { ThemeProvider } from './hooks/useTheme';
 import { scrollToSection, getActiveSection } from './utils/scrollUtils';
 import ScrollToTop from './components/ui/ScrollToTop';
 import VantaBackground from './components/VantaBackground';
-import PortfolioChatbot from './components/PortfolioChatbot';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -52,7 +51,6 @@ function App() {
         </main>
         <Footer />
         <ScrollToTop />
-        <PortfolioChatbot />
       </div>
     </ThemeProvider>
   );
