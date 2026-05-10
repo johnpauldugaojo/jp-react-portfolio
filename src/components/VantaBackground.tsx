@@ -5,9 +5,9 @@ import NET from 'vanta/dist/vanta.net.min';
 import { useTheme } from '../hooks/useTheme';
 
 const DARK_BG = 0x23153c;
-const LIGHT_BG = 0xf1f5f9;
+const LIGHT_BG = 0xf8fafc;
 const DARK_COLOR = 0xff3f81;
-const LIGHT_COLOR = 0xff3f81;
+const LIGHT_COLOR = 0x6366f1;
 
 // THREE.VertexColors was removed in r125 but Vanta still references it.
 // Use a Proxy so we don't mutate the sealed ES module namespace.
@@ -24,24 +24,29 @@ const VantaBackground: React.FC = () => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    if (vantaRef.current && !vantaEffect.current) {
-      vantaEffect.current = NET({
-        el: vantaRef.current,
-        THREE: patchedTHREE,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: theme === 'dark' ? DARK_COLOR : LIGHT_COLOR,
-        backgroundColor: theme === 'dark' ? DARK_BG : LIGHT_BG,
-        points: 10.0,
-        maxDistance: 22.0,
-        spacing: 18.0,
-      });
+    if (!vantaRef.current) return;
+
+    if (vantaEffect.current) {
+      vantaEffect.current.destroy();
+      vantaEffect.current = null;
     }
+
+    vantaEffect.current = NET({
+      el: vantaRef.current,
+      THREE: patchedTHREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: theme === 'dark' ? DARK_COLOR : LIGHT_COLOR,
+      backgroundColor: theme === 'dark' ? DARK_BG : LIGHT_BG,
+      points: 10.0,
+      maxDistance: 22.0,
+      spacing: 18.0,
+    });
 
     return () => {
       if (vantaEffect.current) {
@@ -49,22 +54,13 @@ const VantaBackground: React.FC = () => {
         vantaEffect.current = null;
       }
     };
-  }, []);
-
-  useEffect(() => {
-    if (vantaEffect.current) {
-      vantaEffect.current.setOptions({
-        color: theme === 'dark' ? DARK_COLOR : LIGHT_COLOR,
-        backgroundColor: theme === 'dark' ? DARK_BG : LIGHT_BG,
-      });
-    }
   }, [theme]);
 
   return (
     <div
       ref={vantaRef}
       className='fixed inset-0 -z-10'
-      style={{ backgroundColor: theme === 'dark' ? '#23153c' : '#f1f5f9' }}
+      style={{ backgroundColor: theme === 'dark' ? '#23153c' : '#f8fafc' }}
     />
   );
 };
