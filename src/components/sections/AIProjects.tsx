@@ -14,14 +14,14 @@ const AIProjects: React.FC = () => {
     <section id='ai-projects' className='py-20'>
       <div className='container mx-auto px-6'>
         <div className='mb-12 text-center'>
-          <h2 className='text-3xl font-bold text-slate-800 dark:text-white mb-4'>
+          <h2 className='text-3xl font-bold text-slate-900 dark:text-white mb-4'>
             🧠 AI{' '}
             <span className='text-cyan-600 dark:text-cyan-400'>
               Projects
             </span>
           </h2>
           <div className='w-20 h-1 bg-cyan-600 dark:bg-cyan-400 mx-auto rounded-full'></div>
-          <p className='mt-6 text-slate-600 dark:text-violet-100 max-w-2xl mx-auto'>
+          <p className='mt-6 text-slate-900 dark:text-violet-100 max-w-2xl mx-auto'>
             Tools I built to solve real QA problems combining voice, automation,
             and AI to reduce manual effort and accelerate testing workflows.
           </p>
@@ -45,7 +45,7 @@ const AIProjects: React.FC = () => {
                   <span className='text-xs font-semibold text-cyan-600 dark:text-cyan-400 uppercase tracking-wide'>
                     {project.subtitle}
                   </span>
-                  <h3 className='text-xl font-bold text-slate-800 dark:text-white mt-1'>
+                  <h3 className='text-xl font-bold text-slate-900 dark:text-white mt-1'>
                     {project.title}
                   </h3>
                 </div>
@@ -54,7 +54,7 @@ const AIProjects: React.FC = () => {
               <div className={`overflow-hidden transition-all duration-300 ${
                 expandedId === project.id ? 'max-h-[2000px]' : 'max-h-16'
               }`}>
-                <p className='text-slate-600 dark:text-violet-100 text-sm leading-relaxed'>
+                <p className='text-slate-900 dark:text-violet-100 text-sm leading-relaxed'>
                   {project.description}
                 </p>
               </div>
@@ -70,7 +70,7 @@ const AIProjects: React.FC = () => {
                   rel='noopener noreferrer'
                   aria-label={`${project.title} GitHub`}
                   onClick={(e) => e.stopPropagation()}
-                  className='inline-flex items-center gap-1.5 text-sm font-medium text-slate-700 dark:text-violet-100 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors mt-4'
+                  className='inline-flex items-center gap-1.5 text-sm font-medium text-slate-900 dark:text-violet-100 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors mt-4'
                 >
                   <Github size={16} /> View on GitHub
                 </a>

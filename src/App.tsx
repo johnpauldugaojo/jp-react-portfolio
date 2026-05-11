@@ -32,7 +32,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen text-slate-800 dark:text-violet-50">
+      <div className="min-h-screen text-slate-900 dark:text-violet-50">
         <VantaBackground />
         <Header 
           activeSection={activeSection} 

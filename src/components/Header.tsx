@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
                 ${
                   activeSection === item.id
                     ? 'text-cyan-600 dark:text-cyan-400'
-                    : 'text-slate-600 hover:text-slate-900 dark:text-violet-100 dark:hover:text-white'
+                    : 'text-slate-800 hover:text-slate-900 dark:text-violet-100 dark:hover:text-white'
                 }`}
             >
               {item.label}

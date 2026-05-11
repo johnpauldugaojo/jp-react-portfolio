@@ -13,14 +13,14 @@ const Experience: React.FC = () => {
     <section id='experience' className='py-20'>
       <div className='container mx-auto px-6'>
         <div className='mb-12 text-center'>
-          <h2 className='text-3xl font-bold text-slate-800 dark:text-white mb-4'>
+          <h2 className='text-3xl font-bold text-slate-900 dark:text-white mb-4'>
             Work{' '}
             <span className='text-cyan-600 dark:text-cyan-400'>
               Experience
             </span>
           </h2>
           <div className='w-20 h-1 bg-cyan-600 dark:bg-cyan-400 mx-auto rounded-full'></div>
-          <p className='mt-6 text-slate-600 dark:text-violet-100 max-w-2xl mx-auto'>
+          <p className='mt-6 text-slate-900 dark:text-violet-100 max-w-2xl mx-auto'>
             My professional journey in the quality assurance and testing field.
           </p>
         </div>
@@ -59,16 +59,16 @@ const Experience: React.FC = () => {
                   {exp.startDate} - {exp.endDate || 'Present'}
                 </span>
 
-                <h3 className='text-xl font-semibold text-slate-800 dark:text-white mb-2'>
+                <h3 className='text-xl font-semibold text-slate-900 dark:text-white mb-2'>
                   {exp.role}
                 </h3>
 
-                <div className='flex items-center mb-1 text-slate-600 dark:text-violet-100'>
+                <div className='flex items-center mb-1 text-slate-900 dark:text-violet-100'>
                   <BriefcaseIcon size={16} className='mr-2' />
                   <span>{exp.company}</span>
                 </div>
 
-                <div className='flex items-center mb-4 text-slate-600 dark:text-violet-100'>
+                <div className='flex items-center mb-4 text-slate-900 dark:text-violet-100'>
                   <MapPinIcon size={16} className='mr-2' />
                   <span>{exp.location}</span>
                 </div>
@@ -82,10 +82,10 @@ const Experience: React.FC = () => {
                 >
                   {exp.responsibilities && (
                     <>
-                      <h4 className='font-medium text-slate-700 dark:text-violet-100 mb-2'>
+                      <h4 className='font-medium text-slate-900 dark:text-violet-100 mb-2'>
                         Key Responsibilities:
                       </h4>
-                      <ul className='list-disc list-inside space-y-1 text-slate-600 dark:text-violet-100 text-sm'>
+                      <ul className='list-disc list-inside space-y-1 text-slate-900 dark:text-violet-100 text-sm'>
                         {exp.responsibilities.map((resp, idx) => (
                           <li key={idx}>
                             {resp}
@@ -99,7 +99,7 @@ const Experience: React.FC = () => {
                     <div className='space-y-5'>
                       {exp.projects.map((project) => (
                         <div key={project.name}>
-                          <h4 className='font-medium text-slate-700 dark:text-violet-100 mb-1'>
+                          <h4 className='font-medium text-slate-900 dark:text-violet-100 mb-1'>
                             Project: {project.name}
                           </h4>
                           {project.client && (
@@ -107,7 +107,7 @@ const Experience: React.FC = () => {
                               Client: {project.client}
                             </p>
                           )}
-                          <ul className='list-disc list-inside space-y-1 text-slate-600 dark:text-violet-100 text-sm'>
+                          <ul className='list-disc list-inside space-y-1 text-slate-900 dark:text-violet-100 text-sm'>
                             {project.responsibilities.map((resp, idx) => (
                               <li key={idx}>{resp}</li>
                             ))}

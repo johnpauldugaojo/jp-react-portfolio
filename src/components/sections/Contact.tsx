@@ -110,14 +110,14 @@ const Contact: React.FC = () => {
     <section id='contact' className='py-20'>
       <div className='container mx-auto px-6'>
         <div className='mb-12 text-center'>
-          <h2 className='text-3xl font-bold text-slate-800 dark:text-white mb-4'>
+          <h2 className='text-3xl font-bold text-slate-900 dark:text-white mb-4'>
             Get In{' '}
             <span className='text-cyan-600 dark:text-cyan-400'>
               Touch
             </span>
           </h2>
           <div className='w-20 h-1 bg-cyan-600 dark:bg-cyan-400 mx-auto rounded-full'></div>
-          <p className='mt-6 text-slate-600 dark:text-violet-100 max-w-2xl mx-auto'>
+          <p className='mt-6 text-slate-900 dark:text-violet-100 max-w-2xl mx-auto'>
             Interested in working together? Feel free to reach out using the
             form below or connect directly via email or LinkedIn.
           </p>
@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto'>
           <div className='bg-white/10 dark:bg-slate-800/15 rounded-xl p-8 shadow-md'>
-            <h3 className='text-xl font-semibold text-slate-800 dark:text-white mb-6'>
+            <h3 className='text-xl font-semibold text-slate-900 dark:text-white mb-6'>
               Contact Information
             </h3>
 
@@ -138,12 +138,12 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <h4 className='text-sm font-medium text-slate-500 dark:text-violet-200 mb-1'>
+                  <h4 className='text-sm font-medium text-slate-800 dark:text-violet-200 mb-1'>
                     Email
                   </h4>
                   <a
                     href={`mailto:${personalInfo.email}`}
-                    className='text-slate-800 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'
+                    className='text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'
                   >
                     {personalInfo.email}
                   </a>
@@ -158,14 +158,14 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <h4 className='text-sm font-medium text-slate-500 dark:text-violet-200 mb-1'>
+                  <h4 className='text-sm font-medium text-slate-800 dark:text-violet-200 mb-1'>
                     LinkedIn
                   </h4>
                   <a
                     href={personalInfo.linkedin}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='text-slate-800 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'
+                    className='text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'
                   >
                     Connect on LinkedIn
                   </a>
@@ -174,10 +174,10 @@ const Contact: React.FC = () => {
             </div>
 
             <div className='mt-12'>
-              <h3 className='text-xl font-semibold text-slate-800 dark:text-white mb-4'>
+              <h3 className='text-xl font-semibold text-slate-900 dark:text-white mb-4'>
                 Let's work together
               </h3>
-              <p className='text-slate-600 dark:text-violet-100 mb-4'>
+              <p className='text-slate-900 dark:text-violet-100 mb-4'>
                 Looking for someone who can not only test but also build tools
                 to improve your QA process? I specialize in creating AI-powered
                 solutions that reduce manual effort and accelerate testing
@@ -215,7 +215,7 @@ const Contact: React.FC = () => {
               <div>
                 <label
                   htmlFor='name'
-                  className='block text-sm font-medium text-slate-700 dark:text-violet-100 mb-2'
+                  className='block text-sm font-medium text-slate-900 dark:text-violet-100 mb-2'
                 >
                   Full Name
                 </label>
@@ -230,7 +230,7 @@ const Contact: React.FC = () => {
                     formErrors.name
                       ? 'border-red-500 dark:border-red-400'
                       : 'border-slate-300 dark:border-slate-600'
-                  } bg-white/10 dark:bg-slate-800/15 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-400`}
+                  } bg-white/10 dark:bg-slate-800/15 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-400`}
                 />
                 {formErrors.name && (
                   <p className='mt-1 text-sm text-red-500 dark:text-red-400'>
@@ -242,7 +242,7 @@ const Contact: React.FC = () => {
               <div>
                 <label
                   htmlFor='email'
-                  className='block text-sm font-medium text-slate-700 dark:text-violet-100 mb-2'
+                  className='block text-sm font-medium text-slate-900 dark:text-violet-100 mb-2'
                 >
                   Email
                 </label>
@@ -257,7 +257,7 @@ const Contact: React.FC = () => {
                     formErrors.email
                       ? 'border-red-500 dark:border-red-400'
                       : 'border-slate-300 dark:border-slate-600'
-                  } bg-white/10 dark:bg-slate-800/15 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-400`}
+                  } bg-white/10 dark:bg-slate-800/15 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-400`}
                 />
                 {formErrors.email && (
                   <p className='mt-1 text-sm text-red-500 dark:text-red-400'>
@@ -269,7 +269,7 @@ const Contact: React.FC = () => {
               <div>
                 <label
                   htmlFor='message'
-                  className='block text-sm font-medium text-slate-700 dark:text-violet-100 mb-2'
+                  className='block text-sm font-medium text-slate-900 dark:text-violet-100 mb-2'
                 >
                   Message/Inquiry
                 </label>
@@ -284,7 +284,7 @@ const Contact: React.FC = () => {
                     formErrors.message
                       ? 'border-red-500 dark:border-red-400'
                       : 'border-slate-300 dark:border-slate-600'
-                  } bg-white/10 dark:bg-slate-800/15 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-400`}
+                  } bg-white/10 dark:bg-slate-800/15 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:focus:ring-cyan-400`}
                 ></textarea>
                 {formErrors.message && (
                   <p className='mt-1 text-sm text-red-500 dark:text-red-400'>

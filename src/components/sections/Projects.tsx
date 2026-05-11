@@ -39,7 +39,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
 
         {/* Content */}
         <div className='p-6'>
-          <p className='text-slate-600 dark:text-violet-100 text-sm leading-relaxed mb-6'>
+          <p className='text-slate-900 dark:text-violet-100 text-sm leading-relaxed mb-6'>
             {project.description}
           </p>
 
@@ -51,7 +51,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
               {project.tools.map((tool, index) => (
                 <span
                   key={index}
-                  className='px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-violet-100 rounded-full'
+                  className='px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-violet-100 rounded-full'
                 >
                   {tool}
                 </span>
@@ -83,14 +83,14 @@ const Projects: React.FC = () => {
     <section id='projects' className='py-20'>
       <div className='container mx-auto px-6'>
         <div className='mb-12 text-center'>
-          <h2 className='text-3xl font-bold text-slate-800 dark:text-white mb-4'>
+          <h2 className='text-3xl font-bold text-slate-900 dark:text-white mb-4'>
             My{' '}
             <span className='text-cyan-600 dark:text-cyan-400'>
               Projects
             </span>
           </h2>
           <div className='w-20 h-1 bg-cyan-600 dark:bg-cyan-400 mx-auto rounded-full'></div>
-          <p className='mt-6 text-slate-600 dark:text-violet-100 max-w-2xl mx-auto'>
+          <p className='mt-6 text-slate-900 dark:text-violet-100 max-w-2xl mx-auto'>
             Here are some of the key projects I've worked on that showcase my
             skills in quality assurance and test automation.
           </p>
@@ -114,11 +114,11 @@ const Projects: React.FC = () => {
               </div>
 
               <div className='p-6'>
-                <h3 className='text-xl font-semibold text-slate-800 dark:text-white mb-3'>
+                <h3 className='text-xl font-semibold text-slate-900 dark:text-white mb-3'>
                   {project.title}
                 </h3>
 
-                <p className='text-slate-600 dark:text-violet-100 mb-2 line-clamp-3 text-sm'>
+                <p className='text-slate-900 dark:text-violet-100 mb-2 line-clamp-3 text-sm'>
                   {project.description}
                 </p>
 
@@ -133,7 +133,7 @@ const Projects: React.FC = () => {
                   {project.tools.map((tool, index) => (
                     <span
                       key={index}
-                      className='px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-violet-100 rounded-full'
+                      className='px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-violet-100 rounded-full'
                     >
                       {tool}
                     </span>

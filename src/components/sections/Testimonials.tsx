@@ -13,12 +13,12 @@ const Testimonials: React.FC = () => {
     <section id='testimonials' className='py-20'>
       <div className='container mx-auto px-6'>
         <div className='mb-12 text-center'>
-          <h2 className='text-3xl font-bold text-slate-800 dark:text-white mb-4'>
+          <h2 className='text-3xl font-bold text-slate-900 dark:text-white mb-4'>
             What People{' '}
             <span className='text-cyan-600 dark:text-cyan-400'>Say</span>
           </h2>
           <div className='w-20 h-1 bg-cyan-600 dark:bg-cyan-400 mx-auto rounded-full'></div>
-          <p className='mt-6 text-slate-600 dark:text-violet-100 max-w-2xl mx-auto'>
+          <p className='mt-6 text-slate-900 dark:text-violet-100 max-w-2xl mx-auto'>
             Feedback from colleagues and managers I've had the pleasure of working with.
           </p>
         </div>
@@ -44,7 +44,7 @@ const Testimonials: React.FC = () => {
                   expandedId === t.id ? 'max-h-[2000px]' : 'max-h-20'
                 }`}
               >
-                <div className='space-y-3 text-slate-600 dark:text-violet-100 text-sm leading-relaxed'>
+                <div className='space-y-3 text-slate-900 dark:text-violet-100 text-sm leading-relaxed'>
                   {t.message.split('\n\n').map((para, i, arr) => (
                     <p key={i}>
                       {i === 0 ? `"${para}` : i === arr.length - 1 ? `${para}"` : para}
@@ -64,10 +64,10 @@ const Testimonials: React.FC = () => {
                   </span>
                 </div>
                 <div>
-                  <p className='font-semibold text-slate-800 dark:text-white text-sm'>
+                  <p className='font-semibold text-slate-900 dark:text-white text-sm'>
                     {t.name}
                   </p>
-                  <p className='text-xs text-slate-500 dark:text-violet-200'>
+                  <p className='text-xs text-slate-800 dark:text-violet-200'>
                     {t.role} · {t.company}
                   </p>
                 </div>

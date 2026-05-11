@@ -17,16 +17,16 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
       <div className='container mx-auto px-6'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
           <div className='order-2 lg:order-1 animate-fadeIn'>
-            <h1 className='text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-4'>
+            <h1 className='text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4'>
               Hi, I'm{' '}
               <span className='text-cyan-600 dark:text-cyan-400'>
                 {personalInfo.name}
               </span>
             </h1>
-            <h2 className='text-2xl md:text-3xl font-medium text-slate-600 dark:text-violet-100 mb-6'>
+            <h2 className='text-2xl md:text-3xl font-medium text-slate-900 dark:text-violet-100 mb-6'>
               {personalInfo.title}
             </h2>
-            <p className='text-lg text-slate-600 dark:text-violet-100 mb-8 leading-relaxed max-w-2xl'>
+            <p className='text-lg text-slate-900 dark:text-violet-100 mb-8 leading-relaxed max-w-2xl'>
               I design and build AI-powered tools that transform QA workflows.
               With strong experience in software testing, automation, and
               development, I go beyond traditional QA by creating solutions such
@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               <DownloadCVButton />
               <button
                 onClick={() => scrollToSection('projects')}
-                className='px-6 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-lg border border-slate-300 dark:border-slate-600 hover:border-cyan-500 dark:hover:border-cyan-500 transition-colors shadow-sm hover:shadow-md'
+                className='px-6 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-medium rounded-lg border border-slate-300 dark:border-slate-600 hover:border-cyan-500 dark:hover:border-cyan-500 transition-colors shadow-sm hover:shadow-md'
               >
                 View Projects
               </button>
