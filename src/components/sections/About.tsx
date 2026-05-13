@@ -101,7 +101,7 @@ const About: React.FC = () => {
 
             <a
               href='#contact'
-              className='inline-block px-6 py-3 rounded-lg bg-white/15 dark:bg-slate-800/15 text-slate-900 dark:text-white font-medium hover:bg-cyan-100/50 dark:hover:bg-slate-700/30 transition-colors'
+              className='inline-block px-6 py-3 rounded-lg bg-white/15 dark:bg-slate-800/15 text-slate-900 dark:text-white font-medium border border-slate-400 dark:border-slate-500 hover:border-cyan-500 dark:hover:border-cyan-400 hover:bg-cyan-100/50 dark:hover:bg-slate-700/30 transition-colors'
             >
               Let's Work Together
             </a>
