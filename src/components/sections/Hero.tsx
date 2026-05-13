@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import DownloadCVButton from '../ui/DownloadCVButton';
 import { personalInfo } from '../../data/personalInfo';
 import { Github, Linkedin, Mail } from 'lucide-react';
@@ -8,7 +9,38 @@ interface HeroProps {
   scrollToSection: (section: string) => void;
 }
 
+const ROLES = [
+  'QA Engineer',
+  'AI Tool Builder',
+  'Automation Specialist',
+  'Software Engineer',
+];
+
 const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayed, setDisplayed] = useState('');
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = ROLES[roleIndex];
+    if (!deleting && displayed.length < current.length) {
+      const t = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80);
+      return () => clearTimeout(t);
+    }
+    if (!deleting && displayed.length === current.length) {
+      const t = setTimeout(() => setDeleting(true), 2000);
+      return () => clearTimeout(t);
+    }
+    if (deleting && displayed.length > 0) {
+      const t = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 40);
+      return () => clearTimeout(t);
+    }
+    if (deleting && displayed.length === 0) {
+      setDeleting(false);
+      setRoleIndex((r) => (r + 1) % ROLES.length);
+    }
+  }, [displayed, deleting, roleIndex]);
+
   return (
     <section
       id='hero'
@@ -16,16 +48,24 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
     >
       <div className='container mx-auto px-6'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
-          <div className='order-2 lg:order-1 animate-fadeIn'>
+          <motion.div
+            className='order-2 lg:order-1'
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <h1 className='text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4'>
               Hi, I'm{' '}
               <span className='text-cyan-600 dark:text-cyan-400'>
                 {personalInfo.name}
               </span>
             </h1>
-            <h2 className='text-2xl md:text-3xl font-medium text-slate-900 dark:text-violet-100 mb-6'>
-              {personalInfo.title}
+
+            <h2 className='text-2xl md:text-3xl font-medium text-slate-900 dark:text-violet-100 mb-6 min-h-[2.5rem]'>
+              <span>{displayed}</span>
+              <span className='animate-pulse text-cyan-500 dark:text-cyan-400'>|</span>
             </h2>
+
             <p className='text-lg text-slate-900 dark:text-violet-100 mb-8 leading-relaxed max-w-2xl'>
               I design and build AI-powered tools that transform QA workflows.
               With strong experience in software testing, automation, and
@@ -35,6 +75,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               testing efficiency, and building scalable systems that enhance
               software quality.
             </p>
+
             <div className='flex flex-wrap gap-4'>
               <DownloadCVButton />
               <button
@@ -44,11 +85,15 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                 View Projects
               </button>
             </div>
-          </div>
+          </motion.div>
 
-          <div className='order-1 lg:order-2 flex justify-center animate-fade-in delay-300'>
+          <motion.div
+            className='order-1 lg:order-2 flex justify-center'
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className='relative animate-float'>
-              {/* Profile pic */}
               <div className='w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-cyan-600 shadow-xl transition-transform duration-300 hover:scale-105'>
                 <img
                   src={profile}
@@ -56,13 +101,18 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                   className='w-full h-full object-cover'
                 />
               </div>
-              {/* animation */}
               <div className='absolute -bottom-4 -right-4 w-24 h-24 bg-orange-500 rounded-xl opacity-70 -z-10 animate-pulse-slow'></div>
               <div className='absolute -top-4 -left-4 w-16 h-16 bg-cyan-500 rounded-lg opacity-70 -z-10 animate-bounce pointer-events-none'></div>
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div className='flex items-center gap-4 pt-4'>
+
+        <motion.div
+          className='flex items-center gap-4 pt-4'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
           <a
             href={personalInfo.github}
             target='_blank'
@@ -88,12 +138,8 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           >
             <Mail size={22} />
           </a>
-        </div>
+        </motion.div>
       </div>
-
-      {/* Decorative Elements */}
-      {/* <div className='absolute top-20 right-20 w-64 h-64 bg-cyan-300 dark:bg-cyan-700 rounded-full opacity-10 blur-3xl'></div>
-      <div className='absolute bottom-20 left-20 w-96 h-96 bg-blue-300 dark:bg-blue-700 rounded-full opacity-10 blur-3xl pointer-events-none'></div> */}
     </section>
   );
 };

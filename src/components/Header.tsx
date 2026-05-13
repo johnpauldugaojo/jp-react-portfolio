@@ -127,10 +127,10 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`text-left p-2 rounded-md ${
+                className={`text-left p-2 rounded-md transition-all ${
                   activeSection === item.id
-                    ? 'bg-slate-100 dark:bg-slate-800 text-cyan-600 dark:text-cyan-400 font-medium'
-                    : 'text-slate-700 dark:text-violet-100'
+                    ? 'bg-slate-100 dark:bg-slate-800 text-cyan-600 dark:text-cyan-400 font-medium border-l-2 border-cyan-600 dark:border-cyan-400 pl-3'
+                    : 'text-slate-800 dark:text-violet-100 border-l-2 border-transparent pl-3'
                 }`}
               >
                 {item.label}

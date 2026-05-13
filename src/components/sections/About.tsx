@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { personalInfo } from '../../data/personalInfo';
 
@@ -14,7 +15,13 @@ const About: React.FC = () => {
           <div className='w-20 h-1 bg-cyan-600 dark:bg-cyan-400 mx-auto rounded-full'></div>
         </div>
 
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+        <motion.div
+          className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5 }}
+        >
           <div className='lg:order-1 order-2'>
             <h3 className='text-2xl font-semibold text-slate-900 dark:text-white mb-6'>
               Quality Control and Software Engineer with a passion for
@@ -117,7 +124,7 @@ const About: React.FC = () => {
             <div className='absolute -bottom-6 -left-6 w-48 h-48 bg-slate-100 dark:bg-slate-800 rounded-lg -z-10'></div>
             <div className='absolute -top-6 -right-6 w-32 h-32 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg -z-10'></div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

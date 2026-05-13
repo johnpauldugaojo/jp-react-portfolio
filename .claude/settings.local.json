@@ -15,7 +15,13 @@
       "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm install express cors dotenv --save-dev)",
       "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm install @google/generative-ai)",
       "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && rm src/components/PortfolioChatbot.tsx api/chat.js server.js)",
-      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm uninstall @anthropic-ai/sdk @google/generative-ai express cors dotenv)"
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm uninstall @anthropic-ai/sdk @google/generative-ai express cors dotenv)",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npm install react-github-calendar)",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npx tsc --noEmit 2>&1 | head -50)",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && node -e \"const pkg = require\\('./node_modules/react-github-calendar/package.json'\\); console.log\\(pkg.version, pkg.main, pkg.module, pkg.exports\\)\")",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npx vite build 2>&1 | tail -30)",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && node -e \"const m = require\\('./node_modules/react-github-calendar/build/index.js'\\); console.log\\(Object.keys\\(m\\)\\)\")",
+      "Bash(cd \"C:/Users/JohnPaulDugaojo/Downloads/jp-react-portfolio\" && npx vite build 2>&1 | tail -10)"
     ]
   },
   "enableAllProjectMcpServers": true,

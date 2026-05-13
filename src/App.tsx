@@ -13,6 +13,7 @@ import SkillsCarousel from './components/sections/SkillsCarousel';
 import { ThemeProvider } from './hooks/useTheme';
 import { scrollToSection, getActiveSection } from './utils/scrollUtils';
 import ScrollToTop from './components/ui/ScrollToTop';
+import ScrollProgressBar from './components/ui/ScrollProgressBar';
 import VantaBackground from './components/VantaBackground';
 
 function App() {
@@ -33,8 +34,9 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen text-slate-900 dark:text-violet-50">
+        <ScrollProgressBar />
         <VantaBackground />
-        <Header 
+        <Header
           activeSection={activeSection} 
           scrollToSection={scrollToSection} 
         />

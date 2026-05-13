@@ -5,6 +5,7 @@ export interface Project {
   tools: string[];
   image: string;
   link?: string;
+  category: ('qa' | 'web')[];
 }
 
 export const projects: Project[] = [
@@ -25,6 +26,7 @@ export const projects: Project[] = [
     ],
     image:
       'https://coingeek.com/wp-content/uploads/2022/02/UnionBank-Logo-jpg.webp',
+    category: ['qa', 'web'],
   },
   {
     id: 2,
@@ -43,6 +45,7 @@ export const projects: Project[] = [
     ],
     image:
       'https://www.deltek.com/-/media/deltekblogs/blogs/2025/05/tip/modernized-branding-and-visual-themes.ashx',
+    category: ['qa'],
   },
   {
     id: 3,
@@ -51,5 +54,6 @@ export const projects: Project[] = [
       'A modern, responsive single-page portfolio built with React.js and Tailwind CSS, designed to showcase my experience and skills as both a Software Engineer and Quality Control Engineer, highlighting my strengths in development, automated/manual testing, and delivering reliable, high-quality software solutions.',
     tools: ['ReactJS', 'TailwindCSS', 'TypeScript', 'Vite', 'Git'],
     image: '/img/project/proj1.png',
+    category: ['web'],
   },
 ];

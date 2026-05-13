@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { experiences } from '../../data/experience';
 import { BriefcaseIcon, MapPinIcon } from 'lucide-react';
 
@@ -30,8 +31,12 @@ const Experience: React.FC = () => {
           <div className='absolute left-0 md:left-1/2 top-0 h-full w-px bg-slate-300 dark:bg-slate-600 transform md:translate-x-px'></div>
 
           {experiences.map((exp, index) => (
-            <div
+            <motion.div
               key={exp.id}
+              initial={{ opacity: 0, x: index % 2 === 0 ? 40 : -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative mb-12 md:mb-16 ${
                 index % 2 === 0
                   ? 'md:pr-12 md:ml-auto md:mr-0'
@@ -122,7 +127,7 @@ const Experience: React.FC = () => {
                   {expandedId === exp.id ? 'Show less' : 'Read more'}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

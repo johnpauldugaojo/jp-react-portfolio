@@ -1,5 +1,6 @@
 import React, { useState, FormEvent, useRef } from 'react';
-import { Mail, Linkedin, Send } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Linkedin, Send, ClipboardCopy, Check } from 'lucide-react';
 import { personalInfo } from '../../data/personalInfo';
 import emailjs from '@emailjs/browser';
 
@@ -26,6 +27,13 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(personalInfo.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const validateForm = (): boolean => {
     const errors: FormErrors = {};
@@ -123,7 +131,13 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto'>
+        <motion.div
+          className='grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto'
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5 }}
+        >
           <div className='bg-white/10 dark:bg-slate-800/15 rounded-xl p-8 shadow-md'>
             <h3 className='text-xl font-semibold text-slate-900 dark:text-white mb-6'>
               Contact Information
@@ -141,12 +155,21 @@ const Contact: React.FC = () => {
                   <h4 className='text-sm font-medium text-slate-800 dark:text-violet-200 mb-1'>
                     Email
                   </h4>
-                  <a
-                    href={`mailto:${personalInfo.email}`}
-                    className='text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'
-                  >
-                    {personalInfo.email}
-                  </a>
+                  <div className='flex items-center gap-2'>
+                    <a
+                      href={`mailto:${personalInfo.email}`}
+                      className='text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'
+                    >
+                      {personalInfo.email}
+                    </a>
+                    <button
+                      onClick={copyEmail}
+                      aria-label='Copy email'
+                      className='p-1 rounded text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'
+                    >
+                      {copied ? <Check size={14} className='text-cyan-600 dark:text-cyan-400' /> : <ClipboardCopy size={14} />}
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -334,7 +357,7 @@ const Contact: React.FC = () => {
               </button>
             </form>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
