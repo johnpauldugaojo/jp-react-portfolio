@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
   const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
@@ -90,6 +90,7 @@ const Contact: React.FC = () => {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
     emailjs
       .sendForm(
@@ -102,15 +103,16 @@ const Contact: React.FC = () => {
         setIsSubmitting(false);
         setSubmitSuccess(true);
         setFormValues({ name: '', email: '', message: '' });
-
-        setTimeout(() => {
-          setSubmitSuccess(false);
-        }, 5000);
+        setTimeout(() => setSubmitSuccess(false), 5000);
       })
       .catch((error) => {
-        console.error('Email send error:', error);
+        const msg =
+          typeof error === 'string'
+            ? error
+            : error?.text || error?.message || JSON.stringify(error);
+        console.error('EmailJS error:', msg);
         setIsSubmitting(false);
-        setSubmitError(true);
+        setSubmitError(msg);
       });
   };
 
@@ -210,7 +212,32 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div>
+          <div className='relative'>
+            {isSubmitting && (
+              <div className='absolute inset-0 z-10 flex flex-col items-center justify-center rounded-xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm'>
+                <svg
+                  className='animate-spin h-10 w-10 text-cyan-600 dark:text-cyan-400 mb-3'
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                >
+                  <circle
+                    className='opacity-25'
+                    cx='12'
+                    cy='12'
+                    r='10'
+                    stroke='currentColor'
+                    strokeWidth='4'
+                  />
+                  <path
+                    className='opacity-75'
+                    fill='currentColor'
+                    d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
+                  />
+                </svg>
+                <p className='text-sm font-medium text-cyan-600 dark:text-cyan-400'>Sending your message…</p>
+              </div>
+            )}
             <form ref={formRef} onSubmit={handleSubmit} className='space-y-6'>
               {submitSuccess && (
                 <div className='bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 p-4 rounded-lg mb-6 animate-fadeIn'>
@@ -220,7 +247,12 @@ const Contact: React.FC = () => {
 
               {submitError && (
                 <div className='bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 p-4 rounded-lg mb-6 animate-fadeIn text-sm'>
-                  <p className='font-semibold mb-1'>I'm having trouble connecting right now.</p>
+                  <p className='font-semibold mb-1'>Failed to send message.</p>
+                  {submitError && (
+                    <p className='mb-2 font-mono text-xs bg-red-100 dark:bg-red-900/40 rounded p-2 break-all'>
+                      {submitError}
+                    </p>
+                  )}
                   <p>
                     Please reach out directly at{' '}
                     <a href={`mailto:${personalInfo.email}`} className='underline hover:text-red-900 dark:hover:text-red-100'>
@@ -229,8 +261,7 @@ const Contact: React.FC = () => {
                     or on{' '}
                     <a href={personalInfo.linkedin} target='_blank' rel='noopener noreferrer' className='underline hover:text-red-900 dark:hover:text-red-100'>
                       LinkedIn
-                    </a>
-                    !
+                    </a>.
                   </p>
                 </div>
               )}
@@ -358,6 +389,7 @@ const Contact: React.FC = () => {
             </form>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
